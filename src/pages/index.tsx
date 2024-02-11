@@ -1,4 +1,4 @@
-// import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker.css";
 import { NextPage } from "next";
 import Link from "next/link";
 
@@ -10,9 +10,9 @@ import { ROUTES } from "@/lib/data/routes";
 
 const TopPage: NextPage = () => {
   return (
-    <>
+    <div className="mx-auto flex max-w-6xl flex-col-reverse flex-wrap items-center bg-black px-6 pb-4 sm:py-0 lg:flex-row lg:flex-nowrap">
       <h1>test</h1>
-    </>
+    </div>
     // <Layout path={ROUTES.ANSWER01} title="Answer01">
     //   <Container maxWidth="max-w-4xl">
     //     <div className="mt-8">
