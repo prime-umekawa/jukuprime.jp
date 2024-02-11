@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+開発に参加するまでの流れ
+以下の手順を踏んで開発に参加しましょう。
 
-## Getting Started
+1. git clone
+   以下のコマンドを実行してクローンします。
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+git clone git@github.com:UnReacts/unreact.jp.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. npm install
+   npm install を行います。npm のバージョンは Volta で固定していますが、Volta を使っていない人は、npm -v で 8 系かどうかを確かめます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+#npm のバージョンを確認（8 系でない場合は、7 系をインストール）
+npm -v
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+パッケージをインストール
+npm install
+```
 
-## Learn More
+1. husky の設定
+   以下の 2 つのコマンドを実行して husky の実行ファイルに権限を与えてください。
 
-To learn more about Next.js, take a look at the following resources:
+```
+chmod a+x .husky/pre-push
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+chmod a+x .husky/pre-commit
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. .env.local の作成
+Slack に通知を飛ばすために、.env.local を作成し環境変数を設定します。
+また、MICROCMS_API_KEY という値で、microCMS の API Key を渡します。
 
-## Deploy on Vercel
+誰かから貰いましょう。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/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
+MAIL_RECEIVER=info@unreact.jp
+MAIL_SENDER=info@unreact.jp
+MAIL_PASS=xcndszbiwzcpfnvm
+MICROCMS_API_KEY=nFG1bMaHzSh9w9113egEvwvwnMdPsv84kOZR
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. npm run dev
+   npm run dev でローカルサーバーを立ち上げます。
+
+```
+npm run dev
+```
+
+
+1. ブログを書く時は以下のチェック項目をよく確認してからコミットしましょう
+- 文面
+  - [ ] サムネ画像が正しく設定されているかどうか
+  - [ ] 目次と内容が一致しているか
+  - [ ] #の構造
+  - [ ] 「## 目次」を必ず追加する
+  - [ ] 不要な文字を消す
+  - [ ] 誤字脱字・文法表現が無いか
+  - [ ] 縦長画像は無いか
+  - [ ] 赤枠は統一されているか
+  - [ ] リンクはすべて正しいか
+  - [ ] 紹介アプリ名は正しいか
+  - [ ] インデントは揃っているか
+
+- VS Code
+  - [ ] npm run dev して正常に動くか
+  - [ ] プルリクメッセージを正しく書く
+  - [ ] コミットメッセージを正しく書く
+
+- [ ] Slackで確認依頼を送信する
+
