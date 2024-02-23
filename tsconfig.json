@@ -26,5 +26,8 @@
     "pages/**/*.tsx",
     "lib/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
 }

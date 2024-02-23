@@ -1,15 +1,8 @@
-import { AppProps } from "next/app";
-// 使うようになったら考える
-// import { RecoilRoot } from "recoil";
+/* eslint-disable */
+import { NextPage } from "next";
 
-import "@/styles/globals.css";
-import MessageDialog from "@/components/common/MessageDialog";
+const Home: NextPage = (): JSX.Element => {
+  return <div>test</div>;
+};
 
-function MyApp({ Component, pageProps: { ...pageProps } }: AppProps): JSX.Element {
-  return (
-    <>
-      <Component {...pageProps} />
-    </>
-  );
-}
-export default MyApp;
+export default Home;
