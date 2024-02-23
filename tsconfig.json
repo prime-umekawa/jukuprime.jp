@@ -15,7 +15,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true
   },
   "include": [
@@ -24,7 +24,8 @@
     "Component/**/*.tsx",
     "pages/**/*.ts",
     "pages/**/*.tsx",
-    "lib/*.ts"
+    "lib/*.ts",
+    "./.eslintrc.js"
   ],
   "exclude": ["node_modules"],
   "parserOptions": {

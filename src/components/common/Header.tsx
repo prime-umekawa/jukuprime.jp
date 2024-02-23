@@ -1,31 +1,21 @@
-//ルート間のクライアント側のトランジションを有効
-import Link from "next/link";
-
-//CommonImage, Container, ROUTES(lib/data/routes)をimport
-import CommonImage from "@/components/common/parts/CommonImage";
-import Container from "@/components/common/parts/Container";
-import { ROUTES } from "@/lib/data/routes";
+import Head from "next/head";
 
 const Header = (): JSX.Element => {
   return (
-    // headerタグを用意。クラスは以下
-    // relative bg-primary py-4
-    <header className="bg-primary relative py-4">
-      <Container className="flex items-center">
-        {/* ロゴ */}
-        {/* リンクはROUTES.TOP */}
-        <Link href={ROUTES.TOP}>
-          {/* aタグで囲む */}
-          <a>
-            {/* 中身はCommonImage, 画像は /logo/sample_question.svgを参照*/}
-            {/* 幅160, 高さ24, altタグは素材ヘブン */}
-            <CommonImage src="/logo/sample_question.svg" width={160} height={24} alt="素材ヘブン" />
-          </a>
+    <>
+      <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width"></meta>
+      </Head>
+      <input type="checkbox" id="hamburger" className="hidden" />
+      <label htmlFor="hamburger" className="hamburger-overlay" />
+
+      <div className="">
+        <Link href="/">
+          
         </Link>
-      </Container>
-    </header>
+      </div>
+    </>
   );
 };
 
-//HeaderFCをexport
 export default Header;
