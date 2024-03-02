@@ -1,20 +1,15 @@
-import Head from "next/head";
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { Routes } from '@/lib/data/routes';
 
 const Header = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width"></meta>
-      </Head>
-      <input type="checkbox" id="hamburger" className="hidden" />
-      <label htmlFor="hamburger" className="hamburger-overlay" />
-
-      <div className="">
-        <Link href="/">
-          
-        </Link>
-      </div>
-    </>
+    <header className="flex justify-center py-6 shadow-sm">
+      <Link href={Routes.INDEX.url}>
+        <Image src="/logo/sozai_heaven.svg" width={240} height={48} alt="素材ヘブン" />
+      </Link>
+    </header>
   );
 };
 

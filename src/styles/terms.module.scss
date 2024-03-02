@@ -1,12 +1,14 @@
 .terms {
   div {
+    font-size: 16px;
+    line-height: 1.75;
     h2 {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
-      margin: 12px 0;
+      margin: 48px 0 16px;
     }
     ol {
-      margin-bottom: 32px;
+      margin: 8px 0px;
       list-style: decimal;
       li {
         position: relative;
@@ -15,7 +17,7 @@
       }
     }
     ul {
-      margin-bottom: 32px;
+      margin: 8px 0px;
       list-style: disc;
       li {
         position: relative;

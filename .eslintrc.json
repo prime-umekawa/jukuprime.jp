@@ -4,7 +4,6 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": [".eslintrc.*", "vite.config.*"],
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",

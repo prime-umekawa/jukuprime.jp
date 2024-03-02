@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": ".", // import 文を絶対パスで記述する。
-    "paths": {},
+    "paths": {
+      "@/*": ["./src/*"] // よく使うパスにエイリアスをつける。  @/components が ./src/components
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -9,26 +11,14 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "noImplicitAny": false, // TODO 暗黙のany でエラーが出なくなる
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "Component/**/*.ts",
-    "Component/**/*.tsx",
-    "pages/**/*.ts",
-    "pages/**/*.tsx",
-    "lib/*.ts",
-    "./.eslintrc.js"
-  ],
-  "exclude": ["node_modules"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

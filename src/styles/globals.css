@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-ja leading-relaxed tracking-wider; /* 日本語のための設定 */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

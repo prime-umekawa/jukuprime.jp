@@ -33,10 +33,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-#PWAの謎のファイル
-/public/sw.js
-/public/sw.js.map
-/public/workbox-36aad3af.js
-/public/workbox-36aad3af.js.map
-
+#typescript
 *.tsbuildinfo

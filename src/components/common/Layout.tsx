@@ -1,11 +1,13 @@
-//NextHeadSeoをimport
-import NextHeadSeo from "next-head-seo";
+import NextHeadSeo from 'next-head-seo';
 
-//footer, headerをimport
-import Footer from "@/components/common/Footer";
-import Header from "@/components/common/Header";
-//libのmetaDataからAPP_DEFAULT_DESCRIPTION, APP_ROOT_URL, APP_NAMEをimport
-import { APP_DEFAULT_DESCRIPTION, APP_ROOT_URL, APP_NAME } from "@/lib/data/metaData";
+import Footer from '@/components/common/Footer';
+import Header from '@/components/common/Header';
+import {
+  APP_DEFAULT_DESCRIPTION,
+  APP_DEFAULT_OG_IMAGE_PATH,
+  APP_NAME,
+  APP_ROOT_URL,
+} from '@/lib/data/metaData';
 
 /* Props について
  *  `path`           : [必須] そのページの相対パスを渡す。
@@ -17,55 +19,56 @@ import { APP_DEFAULT_DESCRIPTION, APP_ROOT_URL, APP_NAME } from "@/lib/data/meta
  *  `isTopPage`      : TOP ページで `true` を渡す。それ以外のページは省略。OG タイプの条件分岐に使用。
  *  `children`       : [必須]
  */
-//PublicLayoutのpropsの型を定義
-type PublicLayoutProps = {
+
+type LayoutProps = {
   path: string;
   title: string;
   description?: string;
+  ogImagePath?: string;
   noindex?: boolean;
   noTitleTemplate?: boolean;
   isTopPage?: boolean;
   children: React.ReactNode;
 };
-//LayoutFCを定義
-//Layoutは引数をとる。
-//引数はPublicLayoutPropsと同様。
-//なんでここ=propsじゃないんやろう
+
 const Layout = ({
   path,
   title,
   description = APP_DEFAULT_DESCRIPTION,
+  ogImagePath = APP_DEFAULT_OG_IMAGE_PATH,
   noindex,
   noTitleTemplate,
   isTopPage,
   children,
-}: PublicLayoutProps): JSX.Element => {
+}: LayoutProps): JSX.Element => {
   // ページの絶対パス
-  const pageUrl = APP_ROOT_URL + path; //クライエント側の環境変数を呼び出す。
+  const pageUrl = APP_ROOT_URL + path;
+
+  // OG画像の絶対パス
+  const ogImageUrl = APP_ROOT_URL + ogImagePath;
 
   return (
     <>
-      {/* SEO対策用のいい感じのコンポーネント の中に入れる*/}
       <NextHeadSeo
         title={noTitleTemplate ? title : `${title} - ${APP_NAME}`}
         canonical={pageUrl}
         description={description}
-        robots={noindex ? "noindex, nofollow" : undefined}
+        robots={noindex ? 'noindex, nofollow' : undefined}
         og={{
           title,
           description,
           url: pageUrl,
-
-          type: isTopPage ? "website" : "article",
+          image: ogImageUrl,
+          type: isTopPage ? 'website' : 'article',
           siteName: APP_NAME,
         }}
         twitter={{
-          card: "summary_large_image",
+          card: 'summary_large_image',
         }}
       />
 
       <div className="flex min-h-screen flex-col">
-        <Header />
+        {!isTopPage && <Header />}
         <main className="flex-1">{children}</main>
         <Footer />
       </div>
@@ -74,5 +77,3 @@ const Layout = ({
 };
 
 export default Layout;
-
-//全般ページのレイアウトを設定
