@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 
 import Layout from '@/components/common/Layout';
 import ActionButtons from '@/components/lp/ActionButtons';
-import GifSection from '@/components/lp/GifSection';
 import LPForm from '@/components/lp/LPForm';
 import ResponsiveLPImage from '@/components/lp/ResponsiveLPImage';
 import TrialButton from '@/components/lp/TrialButton';
@@ -24,7 +23,6 @@ const Home: NextPage = () => {
           pcImageSrc="/lp/030_PC_2740x476.png"
           spImageSrc="/lp/030_SP_750x357.png"
         />
-        <GifSection />
         <ResponsiveLPImage
           pcImageSrc="/lp/040_PC_2740x1416.png"
           spImageSrc="/lp/040_SP_750x957.png"
