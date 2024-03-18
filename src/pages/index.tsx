@@ -12,23 +12,23 @@ const Home: NextPage = () => {
     <Layout path={Routes.INDEX.url} title={Routes.INDEX.title} noTitleTemplate isTopPage>
       <div className="relative">
         <ResponsiveLPImage
-          pcImageSrc="/lp/010_PC_2740x1400.png"
+          pcImageSrc="/lp/pc1_2740x1400.png"
           spImageSrc="/lp/010_SP_750x1305.png"
         />
         <ResponsiveLPImage
-          pcImageSrc="/lp/020_PC_2740x2792.png"
+          pcImageSrc="/lp/PC2_2740x2792.png"
           spImageSrc="/lp/020_SP_750x2699.png"
         />
         <ResponsiveLPImage
-          pcImageSrc="/lp/030_PC_2740x476.png"
+          pcImageSrc="/lp/PC3_2740x1455.png"
           spImageSrc="/lp/030_SP_750x357.png"
         />
         <ResponsiveLPImage
-          pcImageSrc="/lp/040_PC_2740x1416.png"
+          pcImageSrc="/lp/PC4_2740x1745.png"
           spImageSrc="/lp/040_SP_750x957.png"
         />
         <ResponsiveLPImage
-          pcImageSrc="/lp/050_PC_2740x2812.png"
+          pcImageSrc="/lp/PC5_2740x3900.png"
           spImageSrc="/lp/050_SP_750x3065.png"
         />
         <ResponsiveLPImage
